@@ -1,0 +1,97 @@
+#include "xparameters.h"
+#include "xgpio.h"
+#include "VGA_CONTROLLER.h"
+#include "xuartps.h"
+#include "xil_printf.h"
+
+#define ESTADO1	0x0001
+#define ESTADO2 0x0002
+#define ESTADO3 0x0003
+#define ESTADO4 0x0004
+#define ESTADO5 0x0005
+#define ESTADO6 0x0006
+
+#define UART_DEVICE_ID      XPAR_XUARTPS_0_DEVICE_ID
+#define RECV_BUFFER_SIZE	50
+//====================================================
+
+XUartPs Uart_Ps;		/* The instance of the UART Driver */
+XUartPs_Config *Config;
+
+static u8 RecvBuffer[RECV_BUFFER_SIZE];	/* Buffer for Receiving Data */
+
+
+int main (void) 
+{
+	XGpio dip, push;
+	int i, psb_check, dip_check,j;
+	char data;
+
+	//**************************************************************
+	/*
+	 * initialize the UART driver so that it's ready to use
+	 * Look up the configuration in the config table and then initialize it.
+	 */
+	Config = XUartPs_LookupConfig(UART_DEVICE_ID);
+
+	if (NULL == Config) {
+		return XST_FAILURE;
+	}
+
+	int Status = XUartPs_CfgInitialize(&Uart_Ps, Config, Config->BaseAddress);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	XUartPs_SetBaudRate(&Uart_Ps, 115200);
+	//**************************************************************
+	
+	xil_printf("-- Start of the Program --\r\n");
+ 
+	XGpio_Initialize(&dip, XPAR_SWITCHES_DEVICE_ID); // Modify this
+	XGpio_SetDataDirection(&dip, 1, 0xffffffff);
+	
+	XGpio_Initialize(&push, XPAR_BUTTONS_DEVICE_ID); // Modify this
+	XGpio_SetDataDirection(&push, 1, 0xffffffff);
+	
+
+	while (1)
+	{
+	  psb_check = XGpio_DiscreteRead(&push, 1);
+	  xil_printf("Push Buttons Status %x\r\n", psb_check);
+	  dip_check = XGpio_DiscreteRead(&dip, 1);
+	  xil_printf("DIP Switch Status %x\r\n", dip_check);
+	  
+	  // output dip switches value on LED_ip device
+	  //VGA_CONTROLLER_mWriteReg(XPAR_VGA_CONTROLLER_0_CONTROLLER_AXI_BASEADDR, VGA_CONTROLLER_CONTROLLER_AXI_SLV_REG0_OFFSET, 1);
+
+
+	  data_rec = XUartPs_Recv(&Uart_Ps, RecvBuffer, RECV_BUFFER_SIZE);
+	  if(data_rec != 0)
+	  {
+		  data = RecvBuffer[0];
+		  xil_printf("\rValor recibido \r\n: ");
+		  int i;
+		  for(i = 0; i < data_rec; i++)
+		  {
+			  xil_printf("%c", RecvBuffer[i]);
+		  }
+		  if (data=='4')
+		  {
+			  Velocidad=0;
+		  }
+		  if (data=='5')
+		  {
+			  Velocidad=1;
+		  }
+		  if (data=='6')
+		  {
+			  Velocidad=2;
+		  }
+		  if (data=='7')
+		  {
+			  Velocidad=3;
+		  }
+	  	}
+	}
+}

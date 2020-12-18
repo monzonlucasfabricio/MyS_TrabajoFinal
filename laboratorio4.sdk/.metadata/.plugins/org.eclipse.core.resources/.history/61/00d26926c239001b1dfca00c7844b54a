@@ -1,0 +1,138 @@
+#include "xparameters.h"
+#include "xgpio.h"
+#include "VGA_CONTROLLER.h"
+#include "xuartps.h"
+#include "xil_printf.h"
+
+#define ESTADO1	0x0001
+#define ESTADO2 0x0002
+#define ESTADO3 0x0003
+#define ESTADO4 0x0004
+#define ESTADO5 0x0005
+#define ESTADO6 0x0006
+
+#define UART_DEVICE_ID      XPAR_XUARTPS_0_DEVICE_ID
+#define RECV_BUFFER_SIZE	50
+//====================================================
+
+XUartPs Uart_Ps; /* The instance of the UART Driver */
+XUartPs_Config *Config;
+
+static u8 RecvBuffer[RECV_BUFFER_SIZE]; /* Buffer for Receiving Data */
+
+int main(void) {
+	XGpio dip, push;
+	int j;
+	u8 data_rec;
+	int estado;
+	char data;
+
+	//**************************************************************
+	/*
+	 * initialize the UART driver so that it's ready to use
+	 * Look up the configuration in the config table and then initialize it.
+	 */
+	Config = XUartPs_LookupConfig(UART_DEVICE_ID);
+
+	if (NULL == Config) {
+		return XST_FAILURE;
+	}
+
+	int Status = XUartPs_CfgInitialize(&Uart_Ps, Config, Config->BaseAddress);
+	if (Status != XST_SUCCESS) {
+		return XST_FAILURE;
+	}
+
+	XUartPs_SetBaudRate(&Uart_Ps, 115200);
+	//**************************************************************
+
+	xil_printf("-- Start of the Program --\r\n");
+
+	XGpio_Initialize(&dip, XPAR_SWITCHES_DEVICE_ID); // Modify this
+	XGpio_SetDataDirection(&dip, 1, 0xffffffff);
+
+	XGpio_Initialize(&push, XPAR_BUTTONS_DEVICE_ID); // Modify this
+	XGpio_SetDataDirection(&push, 1, 0xffffffff);
+
+	estado = 0;
+
+	while (1) {
+
+		estado = estado++;
+		// output dip switches value on LED_ip device
+		//VGA_CONTROLLER_mWriteReg(XPAR_VGA_CONTROLLER_0_CONTROLLER_AXI_BASEADDR, VGA_CONTROLLER_CONTROLLER_AXI_SLV_REG0_OFFSET, 1);
+
+		/*data_rec = XUartPs_Recv(&Uart_Ps, RecvBuffer, RECV_BUFFER_SIZE);
+		if (data_rec != 0) {
+			data = RecvBuffer[0];
+
+			if (data == '1') {
+				estado = 0;
+			}
+			if (data == '2') {
+				estado = 1;
+			}
+			if (data == '3') {
+				estado = 2;
+			}
+			if (data == '4') {
+				estado = 3;
+			}
+			if (data == '5') {
+				estado = 4;
+			}
+			if (data == '6') {
+				estado = 5;
+			}
+
+			memset(RecvBuffer, 0, sizeof RecvBuffer);
+		}
+		*/
+
+		switch (estado) {
+		case 0: {
+			xil_printf("\r Estado 0 \r\n");
+			VGA_CONTROLLER_mWriteReg(
+					XPAR_VGA_CONTROLLER_0_CONTROLLER_AXI_BASEADDR,
+					VGA_CONTROLLER_CONTROLLER_AXI_SLV_REG0_OFFSET, ESTADO1);
+		}
+		case 1: {
+			xil_printf("\r Estado 1 \r\n");
+			VGA_CONTROLLER_mWriteReg(
+					XPAR_VGA_CONTROLLER_0_CONTROLLER_AXI_BASEADDR,
+					VGA_CONTROLLER_CONTROLLER_AXI_SLV_REG0_OFFSET, ESTADO2);
+		}
+		case 2: {
+			xil_printf("\r Estado 2 \r\n");
+			VGA_CONTROLLER_mWriteReg(
+					XPAR_VGA_CONTROLLER_0_CONTROLLER_AXI_BASEADDR,
+					VGA_CONTROLLER_CONTROLLER_AXI_SLV_REG0_OFFSET, ESTADO3);
+		}
+		case 3: {
+			xil_printf("\r Estado 3 \r\n");
+			VGA_CONTROLLER_mWriteReg(
+					XPAR_VGA_CONTROLLER_0_CONTROLLER_AXI_BASEADDR,
+					VGA_CONTROLLER_CONTROLLER_AXI_SLV_REG0_OFFSET, ESTADO4);
+		}
+		case 4: {
+			xil_printf("\r Estado 4 \r\n");
+			VGA_CONTROLLER_mWriteReg(
+					XPAR_VGA_CONTROLLER_0_CONTROLLER_AXI_BASEADDR,
+					VGA_CONTROLLER_CONTROLLER_AXI_SLV_REG0_OFFSET, ESTADO5);
+		}
+		case 5: {
+			xil_printf("\r Estado 5 \r\n");
+			VGA_CONTROLLER_mWriteReg(
+					XPAR_VGA_CONTROLLER_0_CONTROLLER_AXI_BASEADDR,
+					VGA_CONTROLLER_CONTROLLER_AXI_SLV_REG0_OFFSET, ESTADO6);
+		}
+
+		}
+
+		if (estado == 6){
+			estado = 0;
+		}
+		for (j=0; j<999999999; j++);
+
+	}
+}

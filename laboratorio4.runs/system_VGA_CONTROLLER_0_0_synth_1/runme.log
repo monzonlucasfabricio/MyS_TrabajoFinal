@@ -1,0 +1,372 @@
+
+*** Running vivado
+    with args -log system_VGA_CONTROLLER_0_0.vds -m64 -product Vivado -mode batch -messageDb vivado.pb -notrace -source system_VGA_CONTROLLER_0_0.tcl
+
+
+****** Vivado v2018.1 (64-bit)
+  **** SW Build 2188600 on Wed Apr  4 18:39:19 MDT 2018
+  **** IP Build 2185939 on Wed Apr  4 20:55:05 MDT 2018
+    ** Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+
+Sourcing tcl script '/home/lucasml/.Xilinx/Vivado/Vivado_init.tcl'
+source system_VGA_CONTROLLER_0_0.tcl -notrace
+Command: synth_design -top system_VGA_CONTROLLER_0_0 -part xc7z010clg400-1 -mode out_of_context
+Starting synth_design
+Attempting to get a license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: [Common 17-349] Got license for feature 'Synthesis' and/or device 'xc7z010'
+INFO: Launching helper process for spawning children vivado processes
+INFO: Helper process launched with PID 5925 
+---------------------------------------------------------------------------------
+Starting RTL Elaboration : Time (s): cpu = 00:00:07 ; elapsed = 00:00:08 . Memory (MB): peak = 1330.355 ; gain = 86.000 ; free physical = 10973 ; free virtual = 13711
+---------------------------------------------------------------------------------
+INFO: [Synth 8-638] synthesizing module 'system_VGA_CONTROLLER_0_0' [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ip/system_VGA_CONTROLLER_0_0/synth/system_VGA_CONTROLLER_0_0.vhd:88]
+	Parameter C_CONTROLLER_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_CONTROLLER_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'VGA_CONTROLLER_v1_0' declared at '/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/hdl/VGA_CONTROLLER_v1_0.vhd:5' bound to instance 'U0' of component 'VGA_CONTROLLER_v1_0' [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ip/system_VGA_CONTROLLER_0_0/synth/system_VGA_CONTROLLER_0_0.vhd:158]
+INFO: [Synth 8-638] synthesizing module 'VGA_CONTROLLER_v1_0' [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/hdl/VGA_CONTROLLER_v1_0.vhd:54]
+	Parameter C_CONTROLLER_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_CONTROLLER_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-3491] module 'VGA_CONTROLLER_v1_0_CONTROLLER_AXI' declared at '/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/hdl/VGA_CONTROLLER_v1_0_CONTROLLER_AXI.vhd:5' bound to instance 'VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst' of component 'VGA_CONTROLLER_v1_0_CONTROLLER_AXI' [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/hdl/VGA_CONTROLLER_v1_0.vhd:101]
+INFO: [Synth 8-638] synthesizing module 'VGA_CONTROLLER_v1_0_CONTROLLER_AXI' [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/hdl/VGA_CONTROLLER_v1_0_CONTROLLER_AXI.vhd:91]
+	Parameter C_S_AXI_DATA_WIDTH bound to: 32 - type: integer 
+	Parameter C_S_AXI_ADDR_WIDTH bound to: 4 - type: integer 
+INFO: [Synth 8-226] default block is never used [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/hdl/VGA_CONTROLLER_v1_0_CONTROLLER_AXI.vhd:243]
+INFO: [Synth 8-226] default block is never used [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/hdl/VGA_CONTROLLER_v1_0_CONTROLLER_AXI.vhd:373]
+INFO: [Synth 8-3491] module 'syncrovga' declared at '/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/src/design.vhd:6' bound to instance 'controller_vga' of component 'syncrovga' [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/hdl/VGA_CONTROLLER_v1_0_CONTROLLER_AXI.vhd:407]
+INFO: [Synth 8-638] synthesizing module 'syncrovga' [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/src/design.vhd:21]
+	Parameter N bound to: 11 - type: integer 
+	Parameter TOTAL_COL bound to: 1056 - type: integer 
+	Parameter TOTAL_ROW bound to: 628 - type: integer 
+	Parameter ACTIVE_COL bound to: 800 - type: integer 
+	Parameter ACTIVE_ROW bound to: 600 - type: integer 
+INFO: [Synth 8-3491] module 'p_prueba' declared at '/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/src/colors.vhd:6' bound to instance 'patrones_inst' of component 'p_prueba' [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/src/design.vhd:118]
+INFO: [Synth 8-638] synthesizing module 'p_prueba' [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/src/colors.vhd:23]
+	Parameter TOTAL_COL bound to: 1056 - type: integer 
+	Parameter TOTAL_ROW bound to: 628 - type: integer 
+	Parameter ACTIVE_COL bound to: 800 - type: integer 
+	Parameter ACTIVE_ROW bound to: 600 - type: integer 
+WARNING: [Synth 8-614] signal 'p_red' is read in the process but is not in the sensitivity list [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/src/colors.vhd:71]
+WARNING: [Synth 8-614] signal 'p_green' is read in the process but is not in the sensitivity list [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/src/colors.vhd:71]
+WARNING: [Synth 8-614] signal 'p_blue' is read in the process but is not in the sensitivity list [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/src/colors.vhd:71]
+INFO: [Synth 8-256] done synthesizing module 'p_prueba' (1#1) [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/src/colors.vhd:23]
+WARNING: [Synth 8-6014] Unused sequential element flagpixelhsync_reg was removed.  [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/src/design.vhd:74]
+WARNING: [Synth 8-6014] Unused sequential element flagpixelvsync_reg was removed.  [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/src/design.vhd:86]
+INFO: [Synth 8-256] done synthesizing module 'syncrovga' (2#1) [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/src/design.vhd:21]
+WARNING: [Synth 8-6014] Unused sequential element loc_addr_reg was removed.  [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/hdl/VGA_CONTROLLER_v1_0_CONTROLLER_AXI.vhd:241]
+INFO: [Synth 8-256] done synthesizing module 'VGA_CONTROLLER_v1_0_CONTROLLER_AXI' (3#1) [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/hdl/VGA_CONTROLLER_v1_0_CONTROLLER_AXI.vhd:91]
+INFO: [Synth 8-256] done synthesizing module 'VGA_CONTROLLER_v1_0' (4#1) [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ipshared/65a4/hdl/VGA_CONTROLLER_v1_0.vhd:54]
+INFO: [Synth 8-256] done synthesizing module 'system_VGA_CONTROLLER_0_0' (5#1) [/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ip/system_VGA_CONTROLLER_0_0/synth/system_VGA_CONTROLLER_0_0.vhd:88]
+WARNING: [Synth 8-3331] design VGA_CONTROLLER_v1_0_CONTROLLER_AXI has unconnected port S_AXI_AWPROT[2]
+WARNING: [Synth 8-3331] design VGA_CONTROLLER_v1_0_CONTROLLER_AXI has unconnected port S_AXI_AWPROT[1]
+WARNING: [Synth 8-3331] design VGA_CONTROLLER_v1_0_CONTROLLER_AXI has unconnected port S_AXI_AWPROT[0]
+WARNING: [Synth 8-3331] design VGA_CONTROLLER_v1_0_CONTROLLER_AXI has unconnected port S_AXI_ARPROT[2]
+WARNING: [Synth 8-3331] design VGA_CONTROLLER_v1_0_CONTROLLER_AXI has unconnected port S_AXI_ARPROT[1]
+WARNING: [Synth 8-3331] design VGA_CONTROLLER_v1_0_CONTROLLER_AXI has unconnected port S_AXI_ARPROT[0]
+---------------------------------------------------------------------------------
+Finished RTL Elaboration : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1374.965 ; gain = 130.609 ; free physical = 10986 ; free virtual = 13725
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1374.965 ; gain = 130.609 ; free physical = 10987 ; free virtual = 13726
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:08 ; elapsed = 00:00:09 . Memory (MB): peak = 1374.965 ; gain = 130.609 ; free physical = 10987 ; free virtual = 13726
+---------------------------------------------------------------------------------
+INFO: [Device 21-403] Loading part xc7z010clg400-1
+INFO: [Project 1-570] Preparing netlist for logic optimization
+
+Processing XDC Constraints
+Initializing timing engine
+Completed Processing XDC Constraints
+
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+Constraint Validation Runtime : Time (s): cpu = 00:00:00.03 ; elapsed = 00:00:00.02 . Memory (MB): peak = 1678.602 ; gain = 0.000 ; free physical = 10747 ; free virtual = 13487
+---------------------------------------------------------------------------------
+Finished Constraint Validation : Time (s): cpu = 00:00:23 ; elapsed = 00:00:34 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10816 ; free virtual = 13557
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Loading Part and Timing Information
+---------------------------------------------------------------------------------
+Loading part: xc7z010clg400-1
+---------------------------------------------------------------------------------
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10816 ; free virtual = 13557
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Applying 'set_property' XDC Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:23 ; elapsed = 00:00:35 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10818 ; free virtual = 13559
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:24 ; elapsed = 00:00:35 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10809 ; free virtual = 13550
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start RTL Component Statistics 
+---------------------------------------------------------------------------------
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
++---Registers : 
+	               32 Bit    Registers := 5     
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 8     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   4 Input     11 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   4 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Component Statistics 
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start RTL Hierarchical Component Statistics 
+---------------------------------------------------------------------------------
+Hierarchical RTL Component report 
+Module p_prueba 
+Detailed RTL Component Info : 
++---XORs : 
+	   2 Input      1 Bit         XORs := 3     
+Module syncrovga 
+Detailed RTL Component Info : 
++---Adders : 
+	   2 Input     11 Bit       Adders := 2     
+	   2 Input     10 Bit       Adders := 2     
++---Registers : 
+	               11 Bit    Registers := 1     
+	               10 Bit    Registers := 1     
+	                1 Bit    Registers := 2     
++---Muxes : 
+	   4 Input     11 Bit        Muxes := 1     
+	   2 Input     11 Bit        Muxes := 1     
+	   4 Input     10 Bit        Muxes := 1     
+	   2 Input     10 Bit        Muxes := 2     
+Module VGA_CONTROLLER_v1_0_CONTROLLER_AXI 
+Detailed RTL Component Info : 
++---Registers : 
+	               32 Bit    Registers := 5     
+	                4 Bit    Registers := 2     
+	                2 Bit    Registers := 2     
+	                1 Bit    Registers := 6     
++---Muxes : 
+	   2 Input     32 Bit        Muxes := 4     
+	   4 Input     32 Bit        Muxes := 5     
+	   2 Input      1 Bit        Muxes := 5     
+---------------------------------------------------------------------------------
+Finished RTL Hierarchical Component Statistics
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Part Resource Summary
+---------------------------------------------------------------------------------
+Part Resources:
+DSPs: 80 (col length:40)
+BRAMs: 120 (col length: RAMB18 40 RAMB36 20)
+---------------------------------------------------------------------------------
+Finished Part Resource Summary
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Cross Boundary and Area Optimization
+---------------------------------------------------------------------------------
+Warning: Parallel synthesis criteria is not met 
+WARNING: [Synth 8-3331] design system_VGA_CONTROLLER_0_0 has unconnected port controller_axi_awprot[2]
+WARNING: [Synth 8-3331] design system_VGA_CONTROLLER_0_0 has unconnected port controller_axi_awprot[1]
+WARNING: [Synth 8-3331] design system_VGA_CONTROLLER_0_0 has unconnected port controller_axi_awprot[0]
+WARNING: [Synth 8-3331] design system_VGA_CONTROLLER_0_0 has unconnected port controller_axi_arprot[2]
+WARNING: [Synth 8-3331] design system_VGA_CONTROLLER_0_0 has unconnected port controller_axi_arprot[1]
+WARNING: [Synth 8-3331] design system_VGA_CONTROLLER_0_0 has unconnected port controller_axi_arprot[0]
+INFO: [Synth 8-3333] propagating constant 1 across sequential element (\U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/aw_en_reg )
+INFO: [Synth 8-3886] merging instance 'U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/axi_rresp_reg[0]' (FDRE) to 'U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/axi_rresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/axi_rresp_reg[1] )
+INFO: [Synth 8-3886] merging instance 'U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/axi_bresp_reg[0]' (FDRE) to 'U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/axi_bresp_reg[1]'
+INFO: [Synth 8-3333] propagating constant 0 across sequential element (\U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/axi_bresp_reg[1] )
+INFO: [Synth 8-3332] Sequential element (U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/axi_awaddr_reg[1]) is unused and will be removed from module system_VGA_CONTROLLER_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/axi_awaddr_reg[0]) is unused and will be removed from module system_VGA_CONTROLLER_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/aw_en_reg) is unused and will be removed from module system_VGA_CONTROLLER_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/axi_bresp_reg[1]) is unused and will be removed from module system_VGA_CONTROLLER_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/axi_araddr_reg[1]) is unused and will be removed from module system_VGA_CONTROLLER_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/axi_araddr_reg[0]) is unused and will be removed from module system_VGA_CONTROLLER_0_0.
+INFO: [Synth 8-3332] Sequential element (U0/VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst/axi_rresp_reg[1]) is unused and will be removed from module system_VGA_CONTROLLER_0_0.
+---------------------------------------------------------------------------------
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:24 ; elapsed = 00:00:36 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10794 ; free virtual = 13537
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Applying XDC Timing Constraints
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:43 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10659 ; free virtual = 13409
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Timing Optimization
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Timing Optimization : Time (s): cpu = 00:00:30 ; elapsed = 00:00:43 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10659 ; free virtual = 13409
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Technology Mapping
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Technology Mapping : Time (s): cpu = 00:00:30 ; elapsed = 00:00:44 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10656 ; free virtual = 13406
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Flattening Before IO Insertion
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Final Netlist Cleanup
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished IO Insertion : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10656 ; free virtual = 13406
+---------------------------------------------------------------------------------
+
+Report Check Netlist: 
++------+------------------+-------+---------+-------+------------------+
+|      |Item              |Errors |Warnings |Status |Description       |
++------+------------------+-------+---------+-------+------------------+
+|1     |multi_driven_nets |      0|        0|Passed |Multi driven nets |
++------+------------------+-------+---------+-------+------------------+
+---------------------------------------------------------------------------------
+Start Renaming Generated Instances
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Instances : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10656 ; free virtual = 13406
+---------------------------------------------------------------------------------
+
+Report RTL Partitions: 
++-+--------------+------------+----------+
+| |RTL Partition |Replication |Instances |
++-+--------------+------------+----------+
++-+--------------+------------+----------+
+---------------------------------------------------------------------------------
+Start Rebuilding User Hierarchy
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10656 ; free virtual = 13406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Ports
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Ports : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10656 ; free virtual = 13406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Handling Custom Attributes
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10656 ; free virtual = 13406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Renaming Generated Nets
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Finished Renaming Generated Nets : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10656 ; free virtual = 13406
+---------------------------------------------------------------------------------
+---------------------------------------------------------------------------------
+Start Writing Synthesis Report
+---------------------------------------------------------------------------------
+
+Report BlackBoxes: 
++-+--------------+----------+
+| |BlackBox name |Instances |
++-+--------------+----------+
++-+--------------+----------+
+
+Report Cell Usage: 
++------+-----+------+
+|      |Cell |Count |
++------+-----+------+
+|1     |LUT1 |     1|
+|2     |LUT2 |     7|
+|3     |LUT3 |    12|
+|4     |LUT4 |    30|
+|5     |LUT5 |    15|
+|6     |LUT6 |    65|
+|7     |FDCE |    21|
+|8     |FDRE |   169|
+|9     |FDSE |     2|
++------+-----+------+
+
+Report Instance Areas: 
++------+--------------------------------------------+-----------------------------------+------+
+|      |Instance                                    |Module                             |Cells |
++------+--------------------------------------------+-----------------------------------+------+
+|1     |top                                         |                                   |   322|
+|2     |  U0                                        |VGA_CONTROLLER_v1_0                |   322|
+|3     |    VGA_CONTROLLER_v1_0_CONTROLLER_AXI_inst |VGA_CONTROLLER_v1_0_CONTROLLER_AXI |   322|
+|4     |      controller_vga                        |syncrovga                          |    91|
++------+--------------------------------------------+-----------------------------------+------+
+---------------------------------------------------------------------------------
+Finished Writing Synthesis Report : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1678.602 ; gain = 434.246 ; free physical = 10656 ; free virtual = 13406
+---------------------------------------------------------------------------------
+Synthesis finished with 0 errors, 0 critical warnings and 6 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:23 ; elapsed = 00:00:26 . Memory (MB): peak = 1678.602 ; gain = 130.609 ; free physical = 10714 ; free virtual = 13464
+Synthesis Optimization Complete : Time (s): cpu = 00:00:31 ; elapsed = 00:00:44 . Memory (MB): peak = 1678.609 ; gain = 434.246 ; free physical = 10714 ; free virtual = 13464
+INFO: [Project 1-571] Translating synthesized netlist
+INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
+INFO: [Project 1-111] Unisim Transformation Summary:
+No Unisim elements were transformed.
+
+INFO: [Common 17-83] Releasing license: Synthesis
+37 Infos, 18 Warnings, 0 Critical Warnings and 0 Errors encountered.
+synth_design completed successfully
+synth_design: Time (s): cpu = 00:00:33 ; elapsed = 00:00:45 . Memory (MB): peak = 1678.609 ; gain = 453.711 ; free physical = 10707 ; free virtual = 13457
+INFO: [Common 17-1381] The checkpoint '/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.runs/system_VGA_CONTROLLER_0_0_synth_1/system_VGA_CONTROLLER_0_0.dcp' has been generated.
+INFO: [Coretcl 2-1482] Added synthesis output to IP cache for IP /home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.srcs/sources_1/bd/system/ip/system_VGA_CONTROLLER_0_0/system_VGA_CONTROLLER_0_0.xci
+INFO: [Coretcl 2-1174] Renamed 3 cell refs.
+INFO: [Common 17-1381] The checkpoint '/home/lucasml/Escritorio/CESE/Microarquitecturasysoftcores/Laboratorios/laboratorio4/laboratorio4.runs/system_VGA_CONTROLLER_0_0_synth_1/system_VGA_CONTROLLER_0_0.dcp' has been generated.
+INFO: [runtcl-4] Executing : report_utilization -file system_VGA_CONTROLLER_0_0_utilization_synth.rpt -pb system_VGA_CONTROLLER_0_0_utilization_synth.pb
+report_utilization: Time (s): cpu = 00:00:00.07 ; elapsed = 00:00:00.10 . Memory (MB): peak = 1702.613 ; gain = 0.000 ; free physical = 10708 ; free virtual = 13459
+INFO: [Common 17-206] Exiting Vivado at Tue Dec  8 20:22:53 2020...

@@ -1,0 +1,27 @@
+Copyright 1986-2018 Xilinx, Inc. All Rights Reserved.
+------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2018.1 (lin64) Build 2188600 Wed Apr  4 18:39:19 MDT 2018
+| Date         : Tue Dec  8 20:15:38 2020
+| Host         : LucasML running 64-bit Ubuntu 18.04.5 LTS
+| Command      : upgrade_ip
+| Device       : xc7z010clg400-1
+------------------------------------------------------------------------------------
+
+Upgrade Log for IP 'system_VGA_CONTROLLER_0_0'
+
+1. Summary
+----------
+
+CAUTION (success, with warnings) in the upgrade of system_VGA_CONTROLLER_0_0 (user.org:user:VGA_CONTROLLER:1.0) from (Rev. 7) to (Rev. 9)
+
+After upgrade, an IP may have parameter and port differences compared to the original customization. Please review the parameters within the IP customization GUI to ensure proper functionality. Also, please review the updated IP instantiation template to ensure proper connectivity, and update your design if required.
+
+2. Connection Warnings
+----------------------
+
+Detected external port differences while upgrading 'system_VGA_CONTROLLER_0_0'. These changes may impact your design.
+
+
+-Upgrade has removed port 'entrada2_in'
+
+
